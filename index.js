@@ -8,6 +8,7 @@ const postsRoute = require('./routes/posts');
 const categoriesRoute = require('./routes/categories');
 const multer = require('multer');
 const path = require('path');
+const PORT = process.env.PORT || 5000;
 
 dotenv.config();
 app.use(express.json());
@@ -42,6 +43,6 @@ app.use('/api/users', usersRoute);
 app.use('/api/posts', postsRoute);
 app.use('/api/categories',categoriesRoute);
 
-app.listen('5000',()=>{
-    console.log('Backend is running.');
+app.listen(PORT,()=>{
+    console.log('Backend is running.listening on'+PORT);
 });
